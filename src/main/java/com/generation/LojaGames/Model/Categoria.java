@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tb_categoria")
-public class Categorias {
+public class Categoria {
 	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private@Id Long idCategoria;
