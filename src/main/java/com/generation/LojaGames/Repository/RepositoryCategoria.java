@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.generation.LojaGames.Model.Categoria;
 
 @Repository
-public interface RepositoryCategoria extends JpaRepository<Categoria, Long>{
-	
+public interface RepositoryCategoria extends JpaRepository<Categoria, Long> {
+
 	/**
 	 * 
 	 * 
