@@ -23,8 +23,6 @@ public class Produtos {
 	@NotBlank
 	private String tipoProduto;
 	
-	private Long fk_categoria;
-	
 	public Long getIdProduto() {
 		return idProduto;
 	}
@@ -55,14 +53,6 @@ public class Produtos {
 
 	public void setTipoProduto(String tipoProduto) {
 		this.tipoProduto = tipoProduto;
-	}
-
-	public Long getFk_categoria() {
-		return fk_categoria;
-	}
-
-	public void setFk_categoria(Long fk_categoria) {
-		this.fk_categoria = fk_categoria;
 	}
 
 }
