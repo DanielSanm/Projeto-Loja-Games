@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RepositoryProduto extends JpaRepository<Produto, Long>{
+public interface RepositoryProduto extends JpaRepository<Produtos, Long>{
 
 	/**
 	 * Metodo utilizado para retornar pesquisa pela coluna descricaoTitulo
@@ -16,5 +16,5 @@ public interface RepositoryProduto extends JpaRepository<Produto, Long>{
 	 * @author Gustavo
 	 * @since 1.0
 	 */
-	public List<Produto> findAllByDescricaoTituloContainingIgnoreCase(String descricaoTitulo);
+	public List<Produtos> findAllByDescricaoTituloContainingIgnoreCase(String descricaoTitulo);
 }
