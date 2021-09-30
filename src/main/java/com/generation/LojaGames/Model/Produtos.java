@@ -15,7 +15,7 @@ public class Produtos {
 	private @Id Long idProduto;
 	
 	@NotBlank
-	private String nome;
+	private String nomeProdutos;
 	
 	@NotBlank
 	private Double preco;
@@ -31,12 +31,12 @@ public class Produtos {
 		this.idProduto = idProduto;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeProdutos() {
+		return nomeProdutos;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeProdutos(String nomeProdutos) {
+		this.nomeProdutos = nomeProdutos;
 	}
 
 	public Double getPreco() {
