@@ -10,16 +10,16 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Table(name = "tb_categoria")
 public class Categoria {
-	
+
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private@Id Long idCategoria;
-	
+	private @Id Long idCategoria;
+
 	@NotBlank
 	private String nomeCategoria;
-	
+
 	@NotBlank
 	private String setor;
-	
+
 	public Long getIdCategoria() {
 		return idCategoria;
 	}

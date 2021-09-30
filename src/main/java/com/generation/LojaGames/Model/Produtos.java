@@ -17,24 +17,21 @@ public class Produtos {
 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private @Id Long idProduto;
-	
+
 	@NotBlank
-	private String nome;
-	
+	private String nomeProdutos;
+
 	@NotBlank
 	private Double preco;
-	
+
 	@NotBlank
 	private String tipoProduto;
-	
-	private Long fk_categoria;
-	
-		@ManyToOne
-		@JoinColumn(name = "tb_categoria")
-		@JsonIgnoreProperties({ "produtos" })
-		private Categoria categoriaRelacionada;
-	
-	
+
+	@ManyToOne
+	@JoinColumn(name = "tb_categoria")
+	@JsonIgnoreProperties({ "produtos" })
+	private Categoria categoriaRelacionada;
+
 	public Long getIdProduto() {
 		return idProduto;
 	}
@@ -43,12 +40,12 @@ public class Produtos {
 		this.idProduto = idProduto;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeProdutos() {
+		return nomeProdutos;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeProdutos(String nomeProdutos) {
+		this.nomeProdutos = nomeProdutos;
 	}
 
 	public Double getPreco() {
@@ -65,14 +62,6 @@ public class Produtos {
 
 	public void setTipoProduto(String tipoProduto) {
 		this.tipoProduto = tipoProduto;
-	}
-
-	public Long getFk_categoria() {
-		return fk_categoria;
-	}
-
-	public void setFk_categoria(Long fk_categoria) {
-		this.fk_categoria = fk_categoria;
 	}
 
 }
