@@ -48,12 +48,12 @@ public class Categoria {
 		this.nomeCategoria = nomeCategoria;
 	}
 
-	public String getSetor() {
+	public String getDescricaoCategoria() {
 		return descricaoCategoria;
 	}
 
-	public void setSetor(String setor) {
-		this.descricaoCategoria = setor;
+	public void setDescricaoCategoria(String descricaoCategoria) {
+		this.descricaoCategoria = descricaoCategoria;
 	}
 
 	public List<Produtos> getProdutos() {
