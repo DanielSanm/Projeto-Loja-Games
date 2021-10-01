@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.LojaGames.Model.Categoria;
-import com.generation.LojaGames.repository.CategoriaRepositorio;
+import com.generation.LojaGames.repository.CategoriaRepository;
+
 
 /**
  * 
@@ -32,7 +33,7 @@ import com.generation.LojaGames.repository.CategoriaRepositorio;
 public class CategoriaController {
 
 	@Autowired
-	private CategoriaRepositorio repositorio;
+	private CategoriaRepository repositorio;
 
 	@GetMapping("/todos")
 	public ResponseEntity<List<Categoria>> pegarTodos() {

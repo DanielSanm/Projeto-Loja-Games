@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.generation.LojaGames.Model.Categoria;
 
 @Repository
-public interface CategoriaRepositorio extends JpaRepository<Categoria, Long> {
+public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
 	/**
 	 * Busca todas as categorias a a partir da Descriçao

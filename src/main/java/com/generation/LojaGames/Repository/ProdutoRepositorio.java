@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.generation.LojaGames.Model.Produtos;
 
 @Repository
+
 public interface ProdutoRepositorio extends JpaRepository<Produtos, Long> {
 
 	/**
