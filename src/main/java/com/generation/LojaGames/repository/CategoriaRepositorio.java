@@ -1,0 +1,33 @@
+package com.generation.LojaGames.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.generation.LojaGames.Model.Categoria;
+
+@Repository
+public interface CategoriaRepositorio extends JpaRepository<Categoria, Long> {
+
+	/**
+	 * Busca todas as categorias a a partir da Descriçao
+	 * 
+	 * @param descricaoCategoria
+	 * @return Lista com todos as descriçoes que contenham a palavra digitada
+	 * @author Gustavo
+	 * @since 1.0
+	 */
+	public List<Categoria> findAllByDescricaoCategoriaContainingIgnoreCase(String descricao);
+	
+	/**
+	 * Busca todas as categorias a a partir do Nome da Categoria
+	 * 
+	 * @param nomeCategoria
+	 * @return Lista com todos as descriçoes que contenham a palavra digitada
+	 * @author Gustavo
+	 * @since 1.0
+	 */
+	public List<Categoria> findAllByNomeCategoriaContainingIgnoreCase(String descricao);
+
+}

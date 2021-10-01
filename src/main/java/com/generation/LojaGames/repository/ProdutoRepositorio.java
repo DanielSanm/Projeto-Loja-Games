@@ -1,4 +1,4 @@
-package com.generation.LojaGames.Repository;
+package com.generation.LojaGames.repository;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.generation.LojaGames.Model.Produtos;
 
 @Repository
-public interface RepositoryProduto extends JpaRepository<Produtos, Long>{
+public interface ProdutoRepositorio extends JpaRepository<Produtos, Long>{
 
 	/**
 	 * Metodo utilizado para retornar pesquisa pela coluna descricaoTitulo
@@ -18,5 +18,5 @@ public interface RepositoryProduto extends JpaRepository<Produtos, Long>{
 	 * @author Gustavo
 	 * @since 1.0
 	 */
-	public List<Produtos> findAllByDescricaoTituloContainingIgnoreCase(String descricaoTitulo);
+	//public List<Produtos> findAllByDescricaoTituloContainingIgnoreCase(String descricaoTitulo);
 }
