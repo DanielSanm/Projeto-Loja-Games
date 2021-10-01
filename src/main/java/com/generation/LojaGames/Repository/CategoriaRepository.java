@@ -18,7 +18,7 @@ public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 	 * @author Gustavo
 	 * @since 1.0
 	 */
-	public List<Categoria> findAllByDescricaoCategoriaContainingIgnoreCase(String descricao);
+	public List<Categoria> findAllByDescricaoCategoriaContainingIgnoreCase(String descricaoCategoria);
 	
 	/**
 	 * Busca todas as categorias a a partir do Nome da Categoria
@@ -28,6 +28,6 @@ public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 	 * @author Gustavo
 	 * @since 1.0
 	 */
-	public List<Categoria> findAllByNomeCategoriaContainingIgnoreCase(String descricao);
+	public List<Categoria> findAllByNomeCategoriaContainingIgnoreCase(String nomeCategoria);
 
 }
