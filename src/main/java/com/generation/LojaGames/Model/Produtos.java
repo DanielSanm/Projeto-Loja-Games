@@ -15,8 +15,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "tb_produtos")
 public class Produtos {
 
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private @Id Long idProduto;
+	private Long idProduto;
 
 	@NotBlank
 	private String nomeProdutos;
@@ -28,7 +29,9 @@ public class Produtos {
 	private String tipoProduto;
 
 	@ManyToOne
-	@JoinColumn(name = "tb_categoria")
+
+	@JoinColumn(name = "id_categoria")
+
 	@JsonIgnoreProperties({ "produtos" })
 	private Categoria categoriaRelacionada;
 
@@ -62,6 +65,14 @@ public class Produtos {
 
 	public void setTipoProduto(String tipoProduto) {
 		this.tipoProduto = tipoProduto;
+	}
+
+	public Categoria getCategoriaRelacionada() {
+		return categoriaRelacionada;
+	}
+
+	public void setCategoriaRelacionada(Categoria categoriaRelacionada) {
+		this.categoriaRelacionada = categoriaRelacionada;
 	}
 
 }
