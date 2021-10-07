@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.LojaGames.Model.Produtos;
-import com.generation.LojaGames.repository.ProdutoRepositorio;
+import com.generation.LojaGames.Repository.ProdutoRepositorio;
 
 @RestController
 @RequestMapping("/api/v1/produtos")
