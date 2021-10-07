@@ -1,4 +1,5 @@
-package com.generation.LojaGames.repositories;
+package com.generation.LojaGames.repository;
+
 
 import java.util.List;
 import java.util.Optional;
