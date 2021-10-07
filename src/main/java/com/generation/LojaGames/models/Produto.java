@@ -1,4 +1,4 @@
-package com.generation.LojaGames.Model;
+package com.generation.LojaGames.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,30 +8,29 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_produtos")
-public class Produtos {
+public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idProduto;
 
 	@NotBlank
-	private String nomeProdutos;
+	private String nomeProduto;
 
-	@NotBlank
+	@NotNull
 	private Double preco;
 
 	@NotBlank
 	private String tipoProduto;
 
 	@ManyToOne
-
 	@JoinColumn(name = "id_categoria")
-
 	@JsonIgnoreProperties({ "produtos" })
 	private Categoria categoriaRelacionada;
 
@@ -43,12 +42,12 @@ public class Produtos {
 		this.idProduto = idProduto;
 	}
 
-	public String getNomeProdutos() {
-		return nomeProdutos;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
 
-	public void setNomeProdutos(String nomeProdutos) {
-		this.nomeProdutos = nomeProdutos;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 
 	public Double getPreco() {

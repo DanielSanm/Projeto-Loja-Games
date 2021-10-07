@@ -1,4 +1,4 @@
-package com.generation.LojaGames.Controller;
+package com.generation.LojaGames.controllers;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,9 +17,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+<<<<<<< HEAD:src/main/java/com/generation/LojaGames/Controller/CategoriaController.java
 import com.generation.LojaGames.Model.Categoria;
 import com.generation.LojaGames.Repository.CategoriaRepository;
 
+=======
+import com.generation.LojaGames.models.Categoria;
+import com.generation.LojaGames.models.Produto;
+import com.generation.LojaGames.repositories.CategoriaRepository;
+>>>>>>> af2844db5d6487e95fb4ad1dd11c01e636e85009:src/main/java/com/generation/LojaGames/controllers/CategoriaController.java
 
 /**
  * 
@@ -55,6 +61,16 @@ public class CategoriaController {
 		} else {
 			return ResponseEntity.status(204).build();
 		}
+	}
+	
+	@GetMapping("/descricao")
+	public ResponseEntity<List<Categoria>> GetTipoDescricao(@Valid @RequestBody String descricaoCategoria) {
+		return ResponseEntity.ok(repositorio.findAllByDescricaoCategoriaContainingIgnoreCase(descricaoCategoria));
+	}
+	
+	@GetMapping("/nome")
+	public ResponseEntity<List<Categoria>> GetTipoNome(@Valid @RequestBody String nomeCategoria) {
+		return ResponseEntity.ok(repositorio.findAllByNomeCategoriaContainingIgnoreCase(nomeCategoria));
 	}
 
 	@PostMapping("/salvar")
