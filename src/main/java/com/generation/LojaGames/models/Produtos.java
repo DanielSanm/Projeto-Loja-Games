@@ -1,4 +1,4 @@
-package com.generation.LojaGames.Model;
+package com.generation.LojaGames.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
