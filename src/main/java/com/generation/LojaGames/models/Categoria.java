@@ -1,4 +1,4 @@
-package com.generation.LojaGames.Model;
+package com.generation.LojaGames.models;
 
 import java.util.ArrayList;
 import java.util.List;
