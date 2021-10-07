@@ -54,12 +54,12 @@ public class ProdutoController {
 	}
 
 	@GetMapping("/preco")
-	public ResponseEntity<List<Produto>> GetByPreco(@Valid @RequestBody Double preco) {
+	public ResponseEntity<List<Produto>> GetAllByPreco(@Valid @RequestBody Double preco) {
 		return ResponseEntity.ok(repositorio.findAllByPreco(preco));
 	}
 
 	@GetMapping("/tipo")
-	public ResponseEntity<List<Produto>> GetTipoProduto(@Valid @RequestBody String tipoProduto) {
+	public ResponseEntity<List<Produto>> GetAllTipoProduto(@Valid @RequestBody String tipoProduto) {
 		return ResponseEntity.ok(repositorio.findAllByTipoProdutoContainingIgnoreCase(tipoProduto));
 	}
 

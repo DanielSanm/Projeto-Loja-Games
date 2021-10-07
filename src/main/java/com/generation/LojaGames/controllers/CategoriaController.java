@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.LojaGames.models.Categoria;
+import com.generation.LojaGames.models.Produto;
 import com.generation.LojaGames.repositories.CategoriaRepository;
-
 
 /**
  * 
@@ -55,6 +55,16 @@ public class CategoriaController {
 		} else {
 			return ResponseEntity.status(204).build();
 		}
+	}
+	
+	@GetMapping("/descricao")
+	public ResponseEntity<List<Categoria>> GetTipoDescricao(@Valid @RequestBody String descricaoCategoria) {
+		return ResponseEntity.ok(repositorio.findAllByDescricaoCategoriaContainingIgnoreCase(descricaoCategoria));
+	}
+	
+	@GetMapping("/nome")
+	public ResponseEntity<List<Categoria>> GetTipoNome(@Valid @RequestBody String nomeCategoria) {
+		return ResponseEntity.ok(repositorio.findAllByNomeCategoriaContainingIgnoreCase(nomeCategoria));
 	}
 
 	@PostMapping("/salvar")
