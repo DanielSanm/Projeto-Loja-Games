@@ -17,22 +17,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.generation.LojaGames.models.Produtos;
-import com.generation.LojaGames.repository.ProdutosRepository;
-
+import com.generation.LojaGames.models.Produto;
+import com.generation.LojaGames.repositories.ProdutoRepository;
 
 @RestController
 @RequestMapping("/api/v1/produtos")
 @CrossOrigin(allowedHeaders = "*", origins = "*")
-public class ProdutosController {
+public class ProdutoController {
 
 	@Autowired
-	private ProdutosRepository repositorio;
+	private ProdutoRepository repositorio;
 
 	@GetMapping("/todos")
-	public ResponseEntity<List<Produtos>> pegarTodos() {
-		List<Produtos> objetoLista = repositorio.findAll();
-
+	public ResponseEntity<List<Produto>> pegarTodos() {
+		List<Produto> objetoLista = repositorio.findAll();
 		if (objetoLista.isEmpty()) {
 			return ResponseEntity.status(204).build();
 		} else {
@@ -41,9 +39,8 @@ public class ProdutosController {
 	}
 
 	@GetMapping("/{id_produto}")
-	public ResponseEntity<Produtos> pegarPorId(@PathVariable(value = "id_produto") Long idProduto) {
-		Optional<Produtos> objetoOptional = repositorio.findById(idProduto);
-
+	public ResponseEntity<Produto> pegarPorId(@PathVariable(value = "id_produto") Long idProduto) {
+		Optional<Produto> objetoOptional = repositorio.findById(idProduto);
 		if (objetoOptional.isPresent()) {
 			return ResponseEntity.status(200).body(objetoOptional.get());
 		} else {
@@ -52,36 +49,33 @@ public class ProdutosController {
 	}
 
 	@GetMapping("/nome")
-	public ResponseEntity<List<Produtos>> GetByNomeProduto(@Valid @RequestBody String nomeProdutos) {
+	public ResponseEntity<List<Produto>> GetByNomeProduto(@Valid @RequestBody String nomeProdutos) {
 		return ResponseEntity.ok(repositorio.findAllByNomeProdutoContainingIgnoreCase(nomeProdutos));
 	}
 
 	@GetMapping("/preco")
-	public ResponseEntity<List<Produtos>> GetByPreco(@Valid @RequestBody Double preco) {
+	public ResponseEntity<List<Produto>> GetByPreco(@Valid @RequestBody Double preco) {
 		return ResponseEntity.ok(repositorio.findAllByPreco(preco));
 	}
 
 	@GetMapping("/tipo")
-	public ResponseEntity<List<Produtos>> GetTipoProduto(@Valid @RequestBody String tipoProduto) {
+	public ResponseEntity<List<Produto>> GetTipoProduto(@Valid @RequestBody String tipoProduto) {
 		return ResponseEntity.ok(repositorio.findAllByTipoProdutoContainingIgnoreCase(tipoProduto));
 	}
 
 	@PostMapping("/salvar")
-	public ResponseEntity<Produtos> salvar(@Valid @RequestBody Produtos novoProduto) {
+	public ResponseEntity<Produto> salvar(@Valid @RequestBody Produto novoProduto) {
 		return ResponseEntity.status(201).body(repositorio.save(novoProduto));
-
 	}
 
 	@PutMapping("/atualizar")
-	public ResponseEntity<Produtos> atualizar(@Valid @RequestBody Produtos novoProduto) {
+	public ResponseEntity<Produto> atualizar(@Valid @RequestBody Produto novoProduto) {
 		return ResponseEntity.status(201).body(repositorio.save(novoProduto));
-
 	}
 
 	@DeleteMapping("/deletar/{id_produto}")
-	public ResponseEntity<Produtos> deletar(@PathVariable(value = "id_produto") Long idProduto) {
-		Optional<Produtos> objetoOptional = repositorio.findById(idProduto);
-
+	public ResponseEntity<Produto> deletar(@PathVariable(value = "id_produto") Long idProduto) {
+		Optional<Produto> objetoOptional = repositorio.findById(idProduto);
 		if (objetoOptional.isPresent()) {
 			repositorio.deleteById(idProduto);
 			return ResponseEntity.status(204).build();
