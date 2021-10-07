@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -22,7 +23,7 @@ public class Produto {
 	@NotBlank
 	private String nomeProduto;
 
-	@NotBlank
+	@NotNull
 	private Double preco;
 
 	@NotBlank
@@ -30,7 +31,7 @@ public class Produto {
 
 	@ManyToOne
 	@JoinColumn(name = "id_categoria")
-	@JsonIgnoreProperties({ "produto" })
+	@JsonIgnoreProperties({ "produtos" })
 	private Categoria categoriaRelacionada;
 
 	public Long getIdProduto() {
