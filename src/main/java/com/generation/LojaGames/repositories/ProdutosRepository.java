@@ -1,4 +1,4 @@
-package com.generation.LojaGames.Repository;
+package com.generation.LojaGames.repositories;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,11 +6,11 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.generation.LojaGames.Model.Produtos;
+import com.generation.LojaGames.models.Produtos;
 
 @Repository
 
-public interface ProdutoRepositorio extends JpaRepository<Produtos, Long> {
+public interface ProdutosRepository extends JpaRepository<Produtos, Long> {
 
 	/**
 	 * Metodo utilizado para retornar pesquisa pela coluna descricaoTitulo

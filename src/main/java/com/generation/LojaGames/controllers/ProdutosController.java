@@ -1,5 +1,5 @@
 
-package com.generation.LojaGames.Controller;
+package com.generation.LojaGames.controllers;
 
 import java.util.Optional;
 
@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.generation.LojaGames.Model.Produtos;
-import com.generation.LojaGames.Repository.ProdutoRepositorio;
+import com.generation.LojaGames.models.Produtos;
+import com.generation.LojaGames.repositories.ProdutosRepository;
 
 @RestController
 @RequestMapping("/api/v1/produtos")
@@ -27,7 +27,7 @@ import com.generation.LojaGames.Repository.ProdutoRepositorio;
 public class ProdutosController {
 
 	@Autowired
-	private ProdutoRepositorio repositorio;
+	private ProdutosRepository repositorio;
 
 	@GetMapping("/{id_produto}")
 
