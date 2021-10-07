@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.LojaGames.Model.Produtos;
-import com.generation.LojaGames.Repository.ProdutoRepository;
+import com.generation.LojaGames.Repositories.ProdutosRepository;
 
 @RestController
 @RequestMapping("/api/v1/produtos")
@@ -26,7 +26,7 @@ import com.generation.LojaGames.Repository.ProdutoRepository;
 public class ProdutosController {
 
 	@Autowired
-	private ProdutoRepository repositorio;
+	private ProdutosRepository repositorio;
 
 	@GetMapping("/todos")
 	public ResponseEntity<List<Produtos>> pegarTodos() {

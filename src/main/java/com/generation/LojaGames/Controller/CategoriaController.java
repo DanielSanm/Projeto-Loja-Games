@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.LojaGames.Model.Categoria;
-import com.generation.LojaGames.Repository.CategoriaRepository;
+import com.generation.LojaGames.Repositories.CategoriaRepository;
 
 /**
  * 

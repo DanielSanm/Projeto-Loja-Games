@@ -20,7 +20,7 @@ public class Produtos {
 	private Long idProduto;
 
 	@NotBlank
-	private String nomeProdutos;
+	private String nomeProduto;
 
 	@NotBlank
 	private Double preco;
@@ -29,10 +29,8 @@ public class Produtos {
 	private String tipoProduto;
 
 	@ManyToOne
-
 	@JoinColumn(name = "id_categoria")
-
-	@JsonIgnoreProperties({ "produtos" })
+	@JsonIgnoreProperties({ "produto" })
 	private Categoria categoriaRelacionada;
 
 	public Long getIdProduto() {
@@ -43,12 +41,12 @@ public class Produtos {
 		this.idProduto = idProduto;
 	}
 
-	public String getNomeProdutos() {
-		return nomeProdutos;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
 
-	public void setNomeProdutos(String nomeProdutos) {
-		this.nomeProdutos = nomeProdutos;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 
 	public Double getPreco() {

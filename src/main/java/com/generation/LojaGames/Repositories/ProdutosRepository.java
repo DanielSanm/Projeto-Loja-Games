@@ -1,4 +1,4 @@
-package com.generation.LojaGames.Repository;
+package com.generation.LojaGames.Repositories;
 
 import java.util.List;
 
@@ -8,14 +8,14 @@ import org.springframework.stereotype.Repository;
 import com.generation.LojaGames.Model.Produtos;
 
 @Repository
-public interface ProdutoRepository extends JpaRepository<Produtos, Long> {
+public interface ProdutosRepository extends JpaRepository<Produtos, Long> {
 
 	/**
 	 * Metodo utilizado para retornar pesquisa pela coluna tipoProduto
 	 * 
 	 * @param descricaoTitulo
 	 * @return Lista com todos os tipos de Produtos que contenham a palavra digitada
-	 * @author Gustavo
+	 * @author Abner
 	 * @since 1.0
 	 */
 	public List<Produtos> findAllByTipoProdutoContainingIgnoreCase(String tipoProduto);
@@ -25,7 +25,7 @@ public interface ProdutoRepository extends JpaRepository<Produtos, Long> {
 	 * 
 	 * @param nomeProduto
 	 * @return Lista com todos os nomes de produtos que contenham a palavra digitada
-	 * @author Gustavo
+	 * @author Abner
 	 * @since 1.0
 	 */
 	public List<Produtos> findAllByNomeProdutoContainingIgnoreCase(String nomeProduto);

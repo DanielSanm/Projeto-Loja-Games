@@ -1,4 +1,4 @@
-package com.generation.LojaGames.Repository;
+package com.generation.LojaGames.Repositories;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 	 * @since 1.0
 	 */
 	public List<Categoria> findAllByDescricaoCategoriaContainingIgnoreCase(String descricaoCategoria);
-	
+
 	/**
 	 * Busca todas as categorias a a partir do Nome da Categoria
 	 * 
