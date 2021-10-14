@@ -14,13 +14,14 @@ import com.generation.LojaGames.repositories.UsuarioRepository;
 @Service
 public class UserDetailsServiceImplements implements UserDetailsService {
 
-	@Autowired
-	private UsuarioRepository userRepository;
-
-	@Override
-	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-		Optional<Usuario> user = userRepository.findByUsuario(userName);
-		user.orElseThrow(() -> new UsernameNotFoundException(userName + "not found"));
+		@Override
+		public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+			Optional<Usuario> user = userRepository.findByUsuario(userName);
+			if (user.isPresent()) {
+				return new UserDetailsImplements(user.get());
+			} else {
+				throw new UsernameNotFoundException(userName + " Não existe!");
+			}
 
 		return user.map(UserDetailsServiceImpl::new).get();
 
