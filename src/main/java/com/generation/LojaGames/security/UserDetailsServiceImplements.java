@@ -10,20 +10,19 @@ import org.springframework.stereotype.Service;
 import com.generation.LojaGames.models.Usuario;
 import com.generation.LojaGames.repositories.UsuarioRepository;
 
-
 @Service
 public class UserDetailsServiceImplements implements UserDetailsService {
 
+	private @Autowired UsuarioRepository repository;
 		@Override
 		public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-			Optional<Usuario> user = userRepository.findByUsuario(userName);
+			Optional<Usuario> user = repository.findByUsuario(userName);
 			if (user.isPresent()) {
 				return new UserDetailsImplements(user.get());
 			} else {
 				throw new UsernameNotFoundException(userName + " Não existe!");
 			}
 
-		return user.map(UserDetailsServiceImpl::new).get();
 
 	}
 
