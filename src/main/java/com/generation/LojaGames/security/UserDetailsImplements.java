@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.generation.LojaGames.models.Usuario;
+
 public class UserDetailsImplements implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
@@ -13,10 +15,9 @@ public class UserDetailsImplements implements UserDetails {
 	private String senha;
 	private List<GrantedAuthority> autorizacoes;
 
-	public UserDetailsImplements(String email, String senha) {
-		// super();
-		this.email = email;
-		this.senha = senha;
+	public UserDetailsImplements(Usuario usuario) {
+		this.email = usuario.getUsuario();
+		this.senha = usuario.getSenha();
 	}
 
 	@Override

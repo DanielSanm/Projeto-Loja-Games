@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,9 @@ import com.generation.LojaGames.models.Usuario;
 import com.generation.LojaGames.services.UsuarioServices;
 
 import io.swagger.annotations.Api;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -32,6 +35,11 @@ public class UsuarioController {
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 
+	@ApiOperation(value = "Salva novo usuario no sistema")
+	@ApiResponses(value = {
+			@ApiResponse(code = 201, message = "Retorna usuario cadastrado"),
+			@ApiResponse(code = 400, message = "Erro na requisição")
+	})
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario));
