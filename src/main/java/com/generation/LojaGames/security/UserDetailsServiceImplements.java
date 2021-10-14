@@ -7,15 +7,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
 import com.generation.LojaGames.models.Usuario;
 import com.generation.LojaGames.repositories.UsuarioRepository;
 
-	@Service
-	public class UserDetailsServiceImplements implements UserDetailsService {
 
-		@Autowired
-		private UsuarioRepository userRepository;
+@Service
+public class UserDetailsServiceImplements implements UserDetailsService {
 
 		@Override
 		public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
@@ -26,8 +23,8 @@ import com.generation.LojaGames.repositories.UsuarioRepository;
 				throw new UsernameNotFoundException(userName + " Não existe!");
 			}
 
-		}
+		return user.map(UserDetailsServiceImpl::new).get();
 
 	}
 
-
+}
