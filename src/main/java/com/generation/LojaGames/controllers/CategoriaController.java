@@ -17,15 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-<<<<<<< HEAD:src/main/java/com/generation/LojaGames/Controller/CategoriaController.java
-import com.generation.LojaGames.Model.Categoria;
-import com.generation.LojaGames.Repository.CategoriaRepository;
-
-=======
 import com.generation.LojaGames.models.Categoria;
-import com.generation.LojaGames.models.Produto;
 import com.generation.LojaGames.repositories.CategoriaRepository;
->>>>>>> af2844db5d6487e95fb4ad1dd11c01e636e85009:src/main/java/com/generation/LojaGames/controllers/CategoriaController.java
 
 /**
  * 

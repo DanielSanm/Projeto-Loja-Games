@@ -1,8 +1,4 @@
-<<<<<<< HEAD:src/main/java/com/generation/LojaGames/Repository/CategoriaRepository.java
-package com.generation.LojaGames.Repository;
-=======
 package com.generation.LojaGames.repositories;
->>>>>>> af2844db5d6487e95fb4ad1dd11c01e636e85009:src/main/java/com/generation/LojaGames/repositories/CategoriaRepository.java
 
 import java.util.List;
 
