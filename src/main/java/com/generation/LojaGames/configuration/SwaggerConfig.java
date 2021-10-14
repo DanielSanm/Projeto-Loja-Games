@@ -25,7 +25,7 @@ public class SwaggerConfig {
 	}
 
 	public static ApiInfo metadata() {
-		return new ApiInfoBuilder().title("API - Blog Pessoal")
+		return new ApiInfoBuilder().title("API - Loja Games")
 				.description("Projeto API Spring - Blog Pessoal")
 				.version("1.0.0")
 				.license("Apache License Version 2.0")
