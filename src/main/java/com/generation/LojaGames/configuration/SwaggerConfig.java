@@ -25,18 +25,20 @@ public class SwaggerConfig {
 	}
 
 	public static ApiInfo metadata() {
-		return new ApiInfoBuilder().title("API - Loja Games")
-				.description("Projeto API Spring - Blog Pessoal")
+		return new ApiInfoBuilder()
+				.title("API - Loja Games - Grupo2")
+				.description("Projeto API Spring - Loja Games - Grupo2")
 				.version("1.0.0")
 				.license("Apache License Version 2.0")
-				.licenseUrl("https://github.com/rafaelq80")
+				.licenseUrl("https://github.com/DanielSanm/Projeto-Loja-Games.git")
 				.contact(contact()).build();
 	}
 
 	private static Contact contact() {
-		return new Contact("Pablo santos", "https://github.com/Brulishi", "Bruli_pablo@hotmail.com");
+		return new Contact("Grupo 2", "https://github.com/DanielSanm/Projeto-Loja-Games.git", "grupo2_pi@hotmail.com");
 	}
 
+	@SuppressWarnings("unused")
 	private static List<Response> responseMessage() {
 		return new ArrayList<Response>() {
 			private static final long serialVersionUID = 1L;
